@@ -23,6 +23,8 @@ export class PushNotificationController {
           title: dto.title,
           message: dto.message,
         }, { delay });
+        console.log('✅ Job scheduled');
+
         return { message: 'Scheduled' };
       }
 }

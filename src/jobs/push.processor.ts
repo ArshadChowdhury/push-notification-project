@@ -8,7 +8,7 @@ import { PushNotificationService } from 'src/push-notification/push-notification
 export class PushProcessor {
   constructor(private readonly pushNotificationService: PushNotificationService) {}
 
-  @Process()
+  @Process('send-push')
   async handlePushJob(job: Job) {
     const { title, message } = job.data;
     console.log(`📩 Executing scheduled job: ${title}`);
