@@ -7,10 +7,10 @@ import { UsersModule } from 'src/users/users.module';
 @Module({
   imports: [UsersModule,
     BullModule.registerQueue({
-      name: 'push-queue', 
+      name: 'push-queue',
     }),],
   controllers: [PushNotificationController],
   providers: [PushNotificationService],
   exports: [PushNotificationService],
 })
-export class PushNotificationModule {}
+export class PushNotificationModule { }

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { BullModule } from '@nestjs/bull';
-import { PushProcessor } from './push.processor';
+import { PushNotificationProcessor } from './push.processor';
 import { PushNotificationModule } from 'src/push-notification/push-notification.module';
 
 @Module({
@@ -10,7 +10,7 @@ import { PushNotificationModule } from 'src/push-notification/push-notification.
       }),
       PushNotificationModule,
     ],
-    providers: [PushProcessor],
+    providers: [PushNotificationProcessor],
     exports: [],
   })
   export class JobsModule {}

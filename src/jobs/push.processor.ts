@@ -5,7 +5,7 @@ import { PushNotificationService } from 'src/push-notification/push-notification
 
 @Processor('push-queue')
 @Injectable()
-export class PushProcessor {
+export class PushNotificationProcessor {
   constructor(private readonly pushNotificationService: PushNotificationService) {}
 
   @Process('send-push')

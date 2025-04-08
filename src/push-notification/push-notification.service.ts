@@ -10,5 +10,6 @@ export class PushNotificationService {
       for (const user of users) {
         console.log(`📲 Sent to ${user.name}: ${title} - ${message}`);
       }
+      return { message: 'Sent push notification to all users' };
     }
 }
