@@ -1,17 +1,16 @@
-# 🚀 Push Notification Project (NestJS + Redis + Bull)
+# Push Notification Project (NestJS + Redis + Bull)
 
 A simple NestJS-based backend service for sending **push notifications immediately** or **scheduling them for later**.
 
 ---
 
-## ✅ Features
+## Features
 
 - Send push notifications instantly to all users.
 - Schedule notifications using Redis-powered queues (Bull).
 - Accepts `scheduleAt` in ISO 8601 format.
 - Input validation with `class-validator`.
 - Simulated user table with mock data.
-- Optional: Integrate FCM for real push delivery.
 
 ---
 
@@ -100,7 +99,7 @@ so delay is now holding the value of how many milliseconds into the future the j
 
 Redis holds the job in a delayed state (push-queue) until the timer expires.
 
-Once the delay is over (i.e., at the scheduled time), Bull processes the job and the notification is sent to all users or gets logged in our case.
+Once the delay is over (i.e., at the scheduled time), Bull processes the job and the notification is sent to all users or gets logged in the console in our case.
 
 
 
