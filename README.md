@@ -57,7 +57,7 @@ We can test API endpoints using Postman or Insomnia.
 Endpoints :
 
 
-
+** /push/send-now **
 
 ```bash
 # http://localhost:3000/push/send-now
@@ -70,6 +70,7 @@ dummy json body :
 
 ```
 
+** /push/schedule **
 
 ```bash
 # http://localhost:3000/push/schedule
