@@ -98,7 +98,7 @@ Date.now() is the current server time in milliseconds.
 
 so delay is now holding the value of how many milliseconds into the future the job should be executed.
 
-Redis holds the job in a delayed state until the timer expires.
+Redis holds the job in a delayed state (push-queue) until the timer expires.
 
 Once the delay is over (i.e., at the scheduled time), Bull processes the job and the notification is sent to all users or gets logged in our case.
 
