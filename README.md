@@ -90,18 +90,17 @@ We want to send a push notification at a future date/time specified in the reque
 
 ```
 const delay = new Date(dto.scheduleAt).getTime() - Date.now();
-
 ```
 
 Here dto.scheduleAt is the time the user wants the notification to be sent (in ISO 8601 format — always in UTC).
 
 Date.now() is the current server time in milliseconds.
 
-delay is how many milliseconds into the future the job should be executed.
+so delay is now holding the value of how many milliseconds into the future the job should be executed.
 
 Redis holds the job in a delayed state until the timer expires.
 
-Once the delay is over (i.e., at the scheduled time), Bull processes the job
+Once the delay is over (i.e., at the scheduled time), Bull processes the job and the notification is sent to all users or gets logged in our case.
 
 
 
