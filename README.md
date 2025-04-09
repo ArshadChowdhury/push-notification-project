@@ -84,3 +84,24 @@ dummy json body :
 
 ```
 
+## Scheduling Logic Breakdown
+
+We want to send a push notification at a future date/time specified in the request payload. 
+
+```
+const delay = new Date(dto.scheduleAt).getTime() - Date.now();
+
+```
+
+Here dto.scheduleAt is the time the user wants the notification to be sent (in ISO 8601 format — always in UTC).
+
+Date.now() is the current server time in milliseconds.
+
+delay is how many milliseconds into the future the job should be executed.
+
+Redis holds the job in a delayed state until the timer expires.
+
+Once the delay is over (i.e., at the scheduled time), Bull processes the job
+
+
+
